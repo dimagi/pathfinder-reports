@@ -31,9 +31,9 @@ class PathfinderWardSummaryReport(CustomProjectReport):
 
     @property
     def report_context(self):
-        ward = self.request.GET.get("group", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
+        ward = self.report_request.GET.get("group", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
         if not (ward and month and year):
             return dict()
         ward = Group.get(ward)
@@ -72,9 +72,9 @@ class PathfinderProviderReport(CustomProjectReport):
 
     @property
     def report_contect(self):
-        name = self.request.GET.get("user", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
+        name = self.report_request.GET.get("user", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
         if not (name and month and year):
             return dict()
         pre = get_patients_by_provider(self.domain, name)
@@ -111,9 +111,9 @@ class PathfinderHBCReport(CustomProjectReport):
 
     @property
     def report_context(self):
-        ward = self.request.GET.get("group", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
+        ward = self.report_request.GET.get("group", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
         if not (ward and month and year):
             return dict()
 
