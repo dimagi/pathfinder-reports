@@ -25,7 +25,7 @@ class PathfinderWardSummaryReport(CustomProjectReport):
     asynchronous = False
     report_template_path = "pathfinder-reports/ward_summary.html"
     fields = ['corehq.apps.reports.fields.MonthField',
-              'corehq.apps.reports.fields.YearField',
+              'corehq.apps.reports.filters.select.YearFilter',
               'corehq.apps.reports.filters.select.GroupFilter']
     flush_layout = True
 
@@ -66,7 +66,7 @@ class PathfinderProviderReport(CustomProjectReport):
     asynchronous = False
     report_template_path = "pathfinder-reports/provider_summary.html"
     fields = ['corehq.apps.reports.fields.MonthField',
-              'corehq.apps.reports.fields.YearField',
+              'corehq.apps.reports.filters.select.YearFilter',
               'pathfinder.models.ProviderSelect']
     flush_layout = True
 
@@ -105,7 +105,7 @@ class PathfinderHBCReport(CustomProjectReport):
     asynchronous = False
     report_template_path = "pathfinder-reports/hbc.html"
     fields = ['corehq.apps.reports.fields.MonthField',
-              'corehq.apps.reports.fields.YearField',
+              'corehq.apps.reports.filters.select.YearFilter',
               'corehq.apps.reports.filters.select.GroupFilter']
     flush_layout = True
 
